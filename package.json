@@ -24,8 +24,10 @@
   "homepage": "https://github.com/Nicolas2098/curso-react#readme",
   "dependencies": {
     "@babel/core": "^7.18.2",
+    "@babel/plugin-transform-runtime": "^7.18.2",
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
+    "axios": "^0.27.2",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "html-loader": "^3.1.0",

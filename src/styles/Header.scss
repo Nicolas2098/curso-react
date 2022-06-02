@@ -4,7 +4,7 @@
     display: none;
 }
 
-.logo{
+.nav-logo{
     width: 100px;
 }
 
@@ -21,6 +21,11 @@
 
 .navbar-left{
     display: flex;
+    padding: 0 12px;
+}
+
+.navbar-right{
+    padding: 0 12px;
 }
 
 .navbar-left ul li a,
@@ -42,8 +47,8 @@ nav{
     display: flex;
     width: 100%;
     justify-content: space-between;
-    padding: 0 24px;
     border-bottom: 1px solid var(--very-ligth-pink);
+    margin-bottom: 24px;
 }
 
 .navbar-email{

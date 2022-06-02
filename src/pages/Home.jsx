@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from '../components/Header';
+import ProjectList from '@containers/ProductList';
 
 const Home = () => {
     return (
-        <Header/>
+        <ProjectList/>
     );
 };
 

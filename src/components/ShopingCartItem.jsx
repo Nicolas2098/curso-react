@@ -1,5 +1,7 @@
 import React from 'react';
 
+import icon_close from '@icons/icon_close.png';
+
 const ShopingCartItem = () => {
     return (
         <div class="shopping-cart">
@@ -8,7 +10,7 @@ const ShopingCartItem = () => {
             </figure>
             <p>Bike</p>
             <p>$30,00</p>
-            <img src="./icons/icon_close.png" alt="close"/>
+            <img src={icon_close} alt="close"/>
       </div>
     );
 };
