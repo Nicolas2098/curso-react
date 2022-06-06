@@ -1,25 +1,24 @@
 import React, {useContext} from 'react';
 import '@styles/ProjectItem.scss';
 import AppContext from '@context/AppContext';
-
 import add_cart from '@icons/bt_add_to_cart.svg';
 
 const ProductItem = ({product}) => {
     const { addToCart } = useContext(AppContext);
     
-const handleClick = item => {
-    addToCart(item);
-}
+    const handleClick = (item) => {
+        addToCart(item);
+    }
 
     return (
-        <div class="product-container">
+        <div className="product-container">
         <img src={product.images[0]} alt={product.title}/>
-        <div class="product-info">
+        <div className="product-info">
             <div>
                 <p>${product.price}</p>
                 <p>{product.title}</p>    
             </div>
-            <figure onClick={() => handleClick(product)}>
+            <figure onClick={() =>  handleClick(product)}>
                 <img src={add_cart} alt=""/>
             </figure>
         </div>

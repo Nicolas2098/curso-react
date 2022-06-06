@@ -14,17 +14,19 @@ import MyAccount from '@pages/MyAccount';
 import NewPassword from  '@pages/NewPassword';
 import Orders from  '@pages/Orders';
 import SendEmail from  '@pages/SendEmail';
-import useInitialState from '@hooks/useInitialState';
 
 //context
 import AppContext from '@context/AppContext';
+import useInitialState from '@hooks/useInitialState';
 
 //styles
 import '@styles/global.css';
 
-const App = () => {
+function App() {
+    const initialState = useInitialState();
+ 
     return (
-        <AppContext.Provider value = {useInitialState}>
+        <AppContext.Provider value ={initialState}>
             <BrowserRouter>
                 <Layout>
                     <Routes>

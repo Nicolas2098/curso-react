@@ -1,10 +1,19 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import '@styles/MyOrder.scss';
-
-import icon_close from '@icons/icon_close.png';
+import AppContext from '@context/AppContext';
+import OrderItem from '@components/OrderItem';
 import flechita from '@icons/flechita.svg';
 
 const MyOrder = () => {
+
+    const { state } = useContext(AppContext);
+
+    const sumTotal = () => {
+        const reducer = (acum, currentValue) => acum + currentValue.price;
+        const sum = state.cart.reduce(reducer,0);
+        return sum;
+    }
+
     return (
     <aside className="product-detail">
         <div className="title-container">
@@ -13,38 +22,18 @@ const MyOrder = () => {
             </div>
 
             <div className="my-order-content">
-            <div className="shopping-cart">
-                <figure>
-                <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike"/>
-                </figure>
-                <p>Bike</p>
-                <p>$30,00</p>
-                <img src={icon_close} alt="close"/>
-            </div>
-
-            <div className="shopping-cart">
-                <figure>
-                <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike"/>
-                </figure>
-                <p>Bike</p>
-                <p>$30,00</p>
-                <img src={icon_close} alt="close"/>
-            </div>
-
-            <div className="shopping-cart">
-                <figure>
-                <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike"/>
-                </figure>
-                <p>Bike</p>
-                <p>$30,00</p>
-                <img src={icon_close} alt="close"/>
+            <div className="my_order_shopping-cart">
+                { state.cart.map(product => (
+                    <OrderItem product = {product} key={ `orderItem-${product.id}`}/>
+                    
+                ))}
             </div>
 
             <div className="order">
                 <p>
                 <span>Total</span>
                 </p>
-                <p>$560.00</p>
+                <p>${sumTotal()}</p>
             </div>
 
             <button className="primary-button">

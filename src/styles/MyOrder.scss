@@ -6,6 +6,11 @@
     box-sizing: border-box;
     position: absolute;
     right: 0;
+    background-color: var(--white);
+    top: 60px;
+    bottom: 0;
+    border-radius: 6px;
+    border: 1px solid var(--very-light-pink);
   }
   .title-container {
     display: flex;
@@ -40,9 +45,9 @@
     text-align: end;
     font-weight: bold;
   }
-  .shopping-cart {
+  .my_order_shopping-cart {
     display: grid;
-    grid-template-columns: auto 1fr auto auto;
+    grid-template-columns: 1fr;
     gap: 16px;
     margin-bottom: 24px;
     align-items: center;

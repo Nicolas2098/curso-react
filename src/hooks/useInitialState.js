@@ -1,23 +1,31 @@
 import { useState } from "react";
 
 const initialState = {
-    cart: [],
+	cart: [],
 }
 
-const useinitialState = () => {
-    const [state, setState] = useState(initialState);
+const useInitialState = () => {
+	const [state, setState] = useState(initialState);
 
-    const addToCart = (payload) => {
-        setState({
-            ...state,
-            cart:[...state.cart,payload]
-        });
-    };
+	const addToCart = (payload) => {
+		setState({
+			...state,
+			cart: [...state.cart, payload]
+		});
+	};
 
-    return{
-        state,
-        addToCart
-    }
+	const removeFromCart = (payload) => {
+		setState({
+			...state,
+			cart: state.cart.filter(items => items.id != payload.id),
+		});
+	}
+
+	return {
+		state,
+		addToCart,
+		removeFromCart
+	}
 }
 
-export default useinitialState;
+export default useInitialState;

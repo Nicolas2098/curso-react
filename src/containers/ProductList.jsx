@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import '@styles/ProjectList.scss';
 import ProductItem from '@components/ProductItem';
 import useGetProducts from '@hooks/useGetProducts';
@@ -9,10 +9,10 @@ const ProductList = () => {
     const products = useGetProducts(Api);
 
     return (
-        <section class="main-container">
-            <div class="cards-container">
+        <section className="main-container">
+            <div className="cards-container">
                 {products.map(product => (
-                    <ProductItem product={product} key={product.id}/>    
+                    <ProductItem product={product} key={product.id}/>
                 ))}
             </div>
         </section>
